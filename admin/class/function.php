@@ -245,6 +245,19 @@
             }
         }
 
+
+            // show all
+
+            public function showAll($id){
+                $query = "SELECT * FROM post_with_ctg where post_status = 1 && cat_id = $id";
+                if (mysqli_query($this->conn, $query)) {
+                    $posts = mysqli_query($this->conn, $query);
+                    
+                    return $posts;
+                    
+                }
+            }
+
     }
     
 ?>

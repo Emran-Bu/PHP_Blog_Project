@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2021 at 05:37 AM
+-- Generation Time: Dec 30, 2021 at 10:39 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -89,7 +89,7 @@ CREATE TABLE `posts` (
 INSERT INTO `posts` (`post_id`, `post_title`, `post_content`, `post_img`, `post_ctg`, `post_author`, `post_date`, `post_comment_count`, `post_summary`, `post_tag`, `post_status`) VALUES
 (18, 'Bangladesh', 'The requested URL was<br>not found on this server. ', '01.jpg', 40, 'Admin', '2021-08-06', 3, 'Nullam at quam ut lacus aliquam t', 'Facebook', 1),
 (19, 'Hello World', 'The requested URL was<br>not found on this server.        ', '1 (39).JPG', 40, 'Admin', '2021-08-06', 3, 'Nullam at quam ut lacus aliquam t', 'Instagram', 1),
-(20, 'Emran Hasan', 'The requested URL was<br>not found on this server. ', 'bh_Ni710602.jpg', 40, 'Admin', '2021-08-06', 3, 'Nullam at quam ut lacus aliquam t', 'Facebook', 1);
+(20, 'Emran Hasan', '        The requested URL was<br>not found on this server.         ', 'bh_Ni710602.jpg', 41, 'Admin', '2021-08-06', 3, 'Nullam at quam ut lacus aliquam t', 'Facebook', 1);
 
 -- --------------------------------------------------------
 
@@ -111,6 +111,37 @@ CREATE TABLE `post_with_ctg` (
 ,`cat_id` int(255)
 ,`cat_name` varchar(60)
 );
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_with_ctgg`
+--
+
+CREATE TABLE `post_with_ctgg` (
+  `post_id` int(255) NOT NULL DEFAULT 0,
+  `post_title` varchar(150) NOT NULL,
+  `post_content` longtext NOT NULL,
+  `post_img` varchar(255) NOT NULL,
+  `post_author` varchar(60) NOT NULL,
+  `post_date` date NOT NULL,
+  `post_comment_count` int(255) NOT NULL,
+  `post_summary` varchar(200) NOT NULL,
+  `post_tag` varchar(255) NOT NULL,
+  `post_status` tinyint(3) NOT NULL,
+  `cat_id` int(255) NOT NULL DEFAULT 0,
+  `cat_name` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `post_with_ctgg`
+--
+
+INSERT INTO `post_with_ctgg` (`post_id`, `post_title`, `post_content`, `post_img`, `post_author`, `post_date`, `post_comment_count`, `post_summary`, `post_tag`, `post_status`, `cat_id`, `cat_name`) VALUES
+(18, 'Bangladesh', 'The requested URL was<br>not found on this server. ', '01.jpg', 'Admin', '2021-08-06', 3, 'Nullam at quam ut lacus aliquam t', 'Facebook', 1, 40, 'html'),
+(19, 'Hello World', 'The requested URL was<br>not found on this server.        ', '1 (39).JPG', 'Admin', '2021-08-06', 3, 'Nullam at quam ut lacus aliquam t', 'Instagram', 1, 40, 'html'),
+(20, 'Emran Hasan', '        The requested URL was<br>not found on this server.         ', 'bh_Ni710602.jpg', 'Admin', '2021-08-06', 3, 'Nullam at quam ut lacus aliquam t', 'Facebook', 1, 41, 'css'),
+(21, '', '', '', 'Admin', '2021-08-10', 3, '', '', 1, 40, 'html');
 
 -- --------------------------------------------------------
 
@@ -151,19 +182,19 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `admin_info`
 --
 ALTER TABLE `admin_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cat_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `cat_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `post_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,6 +1,6 @@
 
 <div class="col-lg-4">
-            <div class="sidebar">
+            <div class="sidebar mt-3">
               <div class="row">
                 <div class="col-lg-12">
                   <div class="sidebar-item search">

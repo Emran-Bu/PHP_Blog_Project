@@ -1,5 +1,5 @@
 <!-- Header -->
-<header class="">
+<header class="fixed-top">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="index.php"><h2>Stand Blog<em>.</em></h2></a>
@@ -11,7 +11,7 @@
 
               <?php while($category=mysqli_fetch_assoc($getCat)){?>
               <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="showAll.php?id=<?php echo $category['cat_id']; ?>">
                   <?php echo $category['cat_name']; ?>
                 </a>
               </li>
